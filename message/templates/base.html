@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Message</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <br>
+  <br>
+  <br>
+    <div class="container ">
+        <div class="row">
+          <div class="col" style="background-color:orange;">
+            {%block content%}
+            {%endblock%}
+          </div>
+          <div class="col" style="background-color:lavender;">
+            <form action="add" method="POST" >
+              {%   csrf_token  %}
+                <div class="form-group">
+                    <label for="uname "><b>Message:</b></label>
+                    <input type="text" class="form-control" id="uname" placeholder="Enter me ssge" name="message" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                  </div>
+                <button type="submit" class="btn btn-primary" onclick="timedRefresh" >Submit</button>
+              </form>
+          </div>
+
+        </div>
+      </div>     
+</body>
+<script>
+  function timedRefresh() {
+  location.reload(true)
+  }
+</script>
+
+</html>
