@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Reviews</title>
+</head>
+<body>
+    <div class="container center">
+        
+        <h1>Members Reviews</h1>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Review</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for review in reviews%}
+            <tr>
+              <td>{{review.name}}</td>
+              <td>{{review.review}}</td>
+            </tr>
+            <tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+</body>
+</html>
