@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <center>
+        <h1> From models </h1>
+    {%for x in obj%}
+        song name  :{{x.song}} song artist:{{x.artist}} <br>
+    {%endfor%}
+        <!-- <h1> Login </h1>
+        <form action="/main" method="POST" name="info">
+            {% csrf_token %}
+            <input type="text" name="song" placeholder="song name"> <br>
+            <input type="text" name="artist" placeholder="artist name"> <br>
+            <input type="submit" value="submit bro ">
+        </form> -->
+    </center>
+    
+</body>
+</html>
