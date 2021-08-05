@@ -11,9 +11,10 @@
     <center>
         <h1>Register your </h1>
         {% for x in messages%}
-        <h1 style="color: red;">{{x}}</h1>
+        <h1 style="color: red;">{{x}}</h1>0
         {% endfor%}
         <form method="POST">
+        
             {% csrf_token %} 
             Name <input type="text" name="name"> <br>
             Password <input type="password" name="password1"><br>
