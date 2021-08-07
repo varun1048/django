@@ -13,6 +13,12 @@
 <body>
 
 <center>
+    {%for post in posts%}
+        <a href="{% url 'post' post %}">{{post}}</a>
+    {%endfor%}
+
+    <a href="{% url 'login'  %}">login</a>
+
     <h1> Member review </h1>
     {%if user.is_authenticated  %}
         va da {{user.username}}

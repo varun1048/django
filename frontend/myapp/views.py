@@ -1,4 +1,5 @@
 from os import name
+from django.contrib.messages.api import info
 from django.shortcuts import render ,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
@@ -6,14 +7,20 @@ from django.contrib import messages
 from .models import reviewModels #database bro
 # Create your views here.
 def index(req):            
-    return render(req,'index.html',{"review":reviewModels})
+    posts = ['varun',1,2,3,4]
+    # return render(req,'index.html',{"review":reviewModels})
+    return render(req,'index.html',{"posts":posts})
 
 def review(req):
     # info = {"review":req.POST['review']}
     # info = User.objects.all() #also can do this way
     # return render(req,'review.html ',info)    
-    info = reviewModels.objects.all()
+    # info = reviewModels.objects.all()
     return render(req,'review.html',{"reviews":info})
+
+    
+    
+
   
 
 def register(req):
@@ -58,3 +65,7 @@ def login(req):
             return redirect('login')
     else:
         return render(req,'login.html')
+
+
+def post(req,pk):
+    return render(req,'post.html',{'pk':pk})
