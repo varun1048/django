@@ -3,13 +3,19 @@
 {%block content%}
 
     <h1>Main page</h1>
-
-    {%for room in rooms%}
-        <!-- <h5>{{room.id}}-- <a href="room/{{room.id}}">{{room.name}}</h5></a>  -->
-        <span> @{{room.host.username}} </span>
-        <h5>{{room.id}}-- <a href="{% url 'room' room.id%}">{{room.name}}</h5></a> 
-        <small>{{room.topic.name}} </small>
-        <hr>
-    {%endfor%}    
-
+<div>
+    <a href={% url 'create-room'  %}> Create Room </a> <br><br><br>
+    <div>
+        {%for room in rooms%}
+        <div>
+            <!-- <h5>{{room.id}}-- <a href="room/{{room.id}}">{{room.name}}</h5></a>  -->
+            <a href={% url 'update-room' room.id   %}>Edit </a>
+            <span> @{{room.host.username}} </span>
+            <h5>{{room.id}}-- <a href="{% url 'room' room.id%}">{{room.name}}</h5></a> 
+            <small>{{room.topic.name}} </small>
+            <hr>
+        </div>
+        {%endfor%}    
+    </div>
+</div>
 {%endblock content%}
