@@ -1,15 +1,52 @@
 {% extends "main.html" %}
-
 {%block content%}
-<div>
-    <h1> {{room.name}} </h1>
-    <p>{{room.description}} </p>
-</div>
-<div class="comment-wrapper">
-    <h3>Conversation</h3>
-    <hr>
 
-</div>
+<style>
+    .room-container{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+</style>
 
+<div class="room-container">
+
+    <div>
+
+        <div>
+            <h1> {{room.name}} </h1>
+            <p>{{room.description}} </p>
+        </div>
+
+        <div class="comment-wrapper">
+            <h3>Conversation</h3>
+            <hr>
+        
+            {% for message in room_message %}
+            <div>
+                <small>@ {{message.user}}  {{message.created |timesince }} ago </small>
+                <p>{{message.body}}</p>
+                <hr>
+            </div>
+            {%endfor%}
+            
+            
+            {% if request.user.is_authenticated %}
+            <div>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <input type="text" / placeholder="write your message here..." name="body">
+                </form>
+            </div>
+            {% endif %}
+            
+            
+        </div>
+    </div>
+
+    <div>
+        <h1> Participants </h1>
+    </div>
+</div>
 {%endblock content%}
-
+    
+    
