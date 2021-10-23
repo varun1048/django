@@ -1,6 +1,100 @@
 {%extends 'main.html'%}
 {%block content%}
+
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    .input-container {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    
+    .icon {
+      padding: 10px;
+      background: dodgerblue;
+      color: white;
+      min-width: 50px;
+      text-align: center;
+    }
+    
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      outline: none;
+
+    }
+    
+    .input-field:focus {
+      border: 2px solid dodgerblue;
+    }
+    
+    /* Set a style for the submit button */
+    .btn {
+      background-color: dodgerblue;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .btn:hover {
+      opacity: 1;
+    }
+    </style>
+
 <div>
-    Add Enquiry
+    
+    
+    <form method='POST' action="/add_enquiry" style="max-width:500px;margin:auto">
+        {% csrf_token %}
+
+        <h2>Add Enquiry</h2>
+        <div class="input-container">
+        <!-- <i class="fa fa-user icon"></i> -->
+            <input class="input-field" type="text" placeholder="Name" name="name">
+        </div>
+    
+        <div class="input-container">
+        <!-- <i class="fa fa-envelope icon"></i> -->
+            <input class="input-field" type="number" placeholder="Mobile Number" name="number">
+        </div>
+        
+        <div class="input-container">
+        <!-- <i class="fa fa-key icon"></i> -->
+            <input class="input-field" type="date"   name="date">
+        </div>
+
+        <div class="input-container" >
+            <!-- <i class="fa fa-key icon"></i> -->
+          <input class="input-field" type="text"   placeholder="Message" name="message">
+        </div>
+    
+
+        <button type="submit" class="btn">Add to family</button>
+    </form>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <form >
+        {% csrf_token %}
+        <input type="date" > 
+        <br>
+    <input type="submit" value="Submit" /> -->
+
 </div>
 {%endblock%}

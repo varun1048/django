@@ -1,6 +1,66 @@
 {%extends 'main.html'%}
 {%block content%}
-<div>
-    Enquiry
+
+<div >
+    <h2>
+
+        Enquirys
+    </h2>
+    
+    <table id="customers">
+        <tr>
+          <th>Name</th>
+          <th>Contact Number</th>
+          <th>Joining Date</th>
+          <th>Enrolled  in</th>
+        </tr>
+        {%for enquiry in enquirys %}
+            <tr>
+                <td>{{enquiry.name}}</td>
+                <td>{{enquiry.number}}</td>
+                <td>{{enquiry.joining_date}}</td>
+                <td>{{enquiry.When}}  <button>Delete</button> </td>
+            </tr>
+        {%endfor%}
+        
+      </table>
+      
+
+
+
 </div>
+
+
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(247, 44, 44);
+  color: white;
+}
+
+h2{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+  
+</style>
+
 {%endblock%}
