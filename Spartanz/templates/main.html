@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARTANZ</title>
+</head>
+<body>
+    {% include 'navbar.html'%}
+    <style>
+        body {
+            margin: 1;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+
+        .home-container{
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+        }
+        .body_container{
+            list-style-type: none;
+            
+            margin-top: 10px;
+            padding: 25px;
+
+            background-color: #f1f1f1;
+            overflow: auto;
+      
+        }
+    </style>
+    <div class="home-container">
+        <div class="vertical_navbar">
+            {% include 'vertical_navbar.html'%}
+        </div>
+        <div class="body_container">
+            {%block content%}   {%endblock%}
+        </div>
+    </div>
+</body>
+</html>
