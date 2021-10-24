@@ -1,7 +1,7 @@
-<style>
+  <style>
    
     
-  ul {
+    .vertical_ul {
     border-radius:10px;
 
     list-style-type: none;
@@ -21,9 +21,9 @@
     overflow: auto;
   }
   
-    li a {
+  .vertical_li .vertical_a {
       display: block;
-      color: #000;
+      color: #000;  
       padding: 8px 16px;
       text-decoration: none;
     }
@@ -32,21 +32,23 @@
   }  
 
     
-    li a:hover:not(.active) {
+
+
+    .vertical_li .vertical_a:hover:not(.active) {
       background-color: #555;
       color: white;
     }
 </style>   
 <div class="vertical_navbar">
 
-    <ul>
-        <li><a href="/enquirys">Enquirys </a></li>
-        <li><a href="/add_enquiry">Add enquiry </a></li>
-        <li><a href="/members">Members</a></li>
-        <li><a href="/add_member">Add member</a></li>
-        <li><a href="/expiry_members">Expiry members</a></li>
+    <ul class="vertical_ul">
+        <li class="vertical_li"><a  class="vertical_a" href="/enquirys">Enquirys </a></li>
+        <li class="vertical_li"><a  class="vertical_a" href="/add_enquiry">Add enquiry </a></li>
+        <li class="vertical_li"><a class="vertical_a" href="/members">Members</a></li>
+        <li class="vertical_li"><a class="vertical_a" href="/add_member">Add member</a></li>
+        <li class="vertical_li"><a class="vertical_a" href="/expiry_members">Expiry members</a></li>
 
-        <li><a href="#/login">Logout</a></li>
+        <li  class="vertical_li"><a class="vertical_a" href="#/login">Logout</a></li>
     </ul>
 
 </div>

@@ -8,6 +8,9 @@ urlpatterns = [
     path('enquirys',views2.enquirys,name='enquirys'),
     path('add_enquiry',views2.add_enquiry,name='add_enquiry'),
     path('members',views2.members,name='members'),
+    
+    path('member/<str:member_id>/',views2.member,name='member'),
+
     path('add_member',views2.add_member,name='add_member'),
     path('expiry_members',views2.expiry_members,name='expiry_members'),
 ]

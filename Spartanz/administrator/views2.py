@@ -1,7 +1,7 @@
 import datetime
 
 from django.shortcuts import render,redirect
-from .models import Enquirys
+from .models import Enquirys,Member
 
 from .form import Enquiry_Form
 # Create your views here.
@@ -28,7 +28,15 @@ def add_enquiry(req):
         })
 
 def members(req):
-    return render(req,'administrator/members.html')
+    
+    return render(req,'administrator/members.html',{"members":Member.objects.all()})
+
+def member(req,member_id):
+    member =  Member.objects.get(id=member_id)
+    return render(req,'administrator/member.html',{"member":member})
+
+
+
 
 def add_member(req):
     return render(req,'administrator/add_member.html')
