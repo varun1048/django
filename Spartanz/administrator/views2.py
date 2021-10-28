@@ -12,20 +12,32 @@ def enquirys(req):
 def add_enquiry(req):
     if req.method == 'POST':
         data = req.POST
-        # date = data['date']
-        # print(date)
+        number = int(data['number'])
         New_enquiry = Enquirys.objects.create(
             name=data['name'],
-            number=data['number'],
+            number= number,
             message=data['message'],
-            joining_date=data['date']
+            joining_date=data['date'],
+            visit_type= data['visit_type']
             )
-        # New_enquiry.save()
+        New_enquiry.save()
         return redirect("enquirys")
 
-    return render(req,'administrator/add_enquiry.html',{
-        "form":Enquiry_Form,
-        })
+    return render(req,'administrator/add_enquiry.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def members(req):
     

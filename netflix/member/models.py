@@ -12,3 +12,15 @@ class Person(models.Model):
     shirt_sizes_instance = models.CharField(max_length=1,choices=shirt_sizes)
     def __str__(self) -> str:
         return f"{first_name}"
+
+
+class Musician(models.Model):
+    musician_name = models.CharField(max_length=15)
+    instrument = models.CharField(max_length=20)
+
+class Album(models.Model):
+    artist  = models.ForeignKey(Musician,on_delete=models.CASCADE)
+    artust_name = models.CharField(max_length=15)
+    nums_star = models.IntegerField()
+    date = models.DateField
+     

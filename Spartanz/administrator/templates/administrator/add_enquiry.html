@@ -61,7 +61,12 @@
     
         <div class="input-container">
         <!-- <i class="fa fa-envelope icon"></i> -->
-            <input class="input-field" type="number" placeholder="Mobile Number" name="number">
+            <!-- <input class="input-field" type="text"  placeholder="Mobile Number" name="number"  pattern="\d*" maxlength="4" > -->
+            <input name="number"  class="input-field" placeholder="Mobile Number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              type = "number"
+              maxlength = "10"
+            />
         </div>
         
         <div class="input-container">
@@ -71,9 +76,13 @@
 
         <div class="input-container" >
             <!-- <i class="fa fa-key icon"></i> -->
-          <input class="input-field" type="text"   placeholder="Message" name="message">
+          <input class="input-field" type="text"  placeholder="Message" name="message">
         </div>
     
+          <input type="radio" id="Call" name="visit_type" value="Call">
+          <label for="Call">Call</label> 
+          <input type="radio" id="Directly" name="visit_type" value="Directly">
+          <label for="Directly">Directly</label><br> <br>
 
         <button type="submit" class="btn">Add to family</button>
     </form>

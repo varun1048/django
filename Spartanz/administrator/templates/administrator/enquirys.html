@@ -7,19 +7,22 @@
         Enquirys
     </h2>
     
-    <table id="customers">
+    <table id="enquirys">
         <tr>
+          <th>Enrolled in</th>
           <th>Name</th>
           <th>Contact Number</th>
           <th>Joining Date</th>
-          <th>Enrolled  in</th>
+          <th>Enquirys by</th>
         </tr>
         {%for enquiry in enquirys %}
-            <tr>
+            <!-- <tr onclick="alert('{{enquiry.message}}')"> -->
+            <tr onclick="alert('Message :{{enquiry.message}}')">
+                <td>{{enquiry.When.date}} at {{enquiry.timming}}</td>  
                 <td>{{enquiry.name}}</td>
                 <td>{{enquiry.number}}</td>
                 <td>{{enquiry.joining_date}}</td>
-                <td>{{enquiry.When}}  <button>Delete</button> </td>
+                <td>{{enquiry.visit_type}}</td>
             </tr>
         {%endfor%}
         
@@ -32,22 +35,25 @@
 
 
 <style>
-#customers {
+#enquirys {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#customers td, #customers th {
+#enquirys td, #enquirys th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#enquirys tr:nth-child(even){background-color: #f2f2f2;}
 
-#customers tr:hover {background-color: #ddd;}
+#enquirys tr:hover {
+  background-color: #ddd;
 
-#customers th {
+}
+
+#enquirys th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
